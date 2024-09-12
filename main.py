@@ -19,18 +19,14 @@ list_pilots = list(map(convert_from_json_to_pilot, pilots))
 list_aircrafts = list(map(convert_from_json_to_aircraft, aircrafts))
 list_targets = list(map(convert_from_json_to_target, targets))
 
-dict_weathers = pipe(
-    list_targets,
-    lambda li: reduce(
-        lambda acc, target: {
-            **acc, target.target_city: get_weather(target.target_city)
-        }, li, {}
-    ),
-    dict
-)
-for target in list_targets:
-    target.distans = haversine_distance(lat, lon, float(get_in([[target.target_city],[0],["lat"]], dict_weathers)), float(get_in([[target.target_city],[0],["lon"]], dict_weathers)))
+dict_weathers = {target.target_city: get_weather(target.target_city) for target in list_targets}
 
+def get_weather_with_distana():
+    for target in list_targets:
+        lat_value = dict_weathers[target.target_city][0]["lat"]
+        lon_value = dict_weathers[target.target_city][0]["lon"]
+        target.distans = haversine_distance(lat, lon, float(lat_value), float(lon_value))
+    return
 print(list_targets)
 print(list_pilots)
 print(list_aircrafts)

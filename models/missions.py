@@ -9,7 +9,7 @@ class Mission:
         self.skill_pilot = pilot.skill
         self.speed = aircraft.speed
         self.puel_capacity = aircraft.puel_capacity
-        self.relative_distance = int(self.distans) / int(self.puel_capacity)
+        self.relative_distance = float(self.distans) / float(self.puel_capacity)
         self.mission_fit_score = mission_fit_score
 
     def __repr__(self):
