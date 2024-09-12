@@ -1,0 +1,37 @@
+[
+  {
+    "type": "Fighter Jet",
+    "speed": 1500,
+    "puel_capacity": 3000
+  },
+  {
+    "type": "Bomber",
+    "speed": 900,
+    "puel_capacity": 5000
+  },
+  {
+    "type": "Drone",
+    "speed": 500,
+    "puel_capacity": 1000
+  },
+  {
+    "type": "Helicopter",
+    "speed": 400,
+    "puel_capacity": 800
+  },
+  {
+    "type": "Stealth Fighter",
+    "speed": 1800,
+    "puel_capacity": 3500
+  },
+  {
+    "type": "Recon Drone",
+    "speed": 600,
+    "puel_capacity": 1200
+  },
+  {
+    "type": "Heavy Bomber",
+    "speed": 850,
+    "puel_capacity": 6000
+  }
+]
